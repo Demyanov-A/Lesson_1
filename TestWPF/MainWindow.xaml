@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Button Content="Send" HorizontalAlignment="Center" Margin="0,303,0,0" VerticalAlignment="Top" Height="42" Width="104" Click="SendButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="44,116,0,0" Text="Login" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="172"/>
+        <TextBlock HorizontalAlignment="Left" Margin="546,116,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="202"/>
+        <TextBox x:Name="Login" HorizontalAlignment="Left" Margin="44,180,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="35"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="538,182,0,0" VerticalAlignment="Top" Width="218" Height="32"/>
 
     </Grid>
 </Window>

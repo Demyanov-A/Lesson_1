@@ -10,7 +10,7 @@ namespace TestConsole
         {
             var from = new MailAddress("a.demyanof@yandex.ru","Андрей");
 
-            var to = new MailAddress("a.demyanofff@gmail.com");
+            var to = new MailAddress("a.demyanofff@gmail.com","Андрей");
 
             var message = new MailMessage(from,to);
 
@@ -22,8 +22,8 @@ namespace TestConsole
 
             client.Credentials = new NetworkCredential
             {
-                UserName = "UserName",
-                Password = "PAssword!"
+                UserName = "a.demyanof",
+                Password = "Qwerty0808"
             };
 
             client.Send(message);
