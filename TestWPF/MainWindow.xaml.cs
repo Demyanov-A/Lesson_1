@@ -40,14 +40,28 @@ namespace TestWPF
 
             var client = new SmtpClient("smtp.yandex.ru", 465);
             client.EnableSsl = true;
-
+            
             client.Credentials = new NetworkCredential
             {
                 UserName = Login.Text,
                 SecurePassword = Password.SecurePassword
+                //Password = Password.Password
             };
 
-            client.Send(message);
+            try
+            {
+                client.Send(message);
+                MessageBox.Show("Почта успешно отправлена", "Отправка почты", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (SmtpException)
+            {
+                MessageBox.Show("Ошибка атворизации", "Ошибка отпраквки почты", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            catch(TimeoutException)
+            {
+                MessageBox.Show("Ошибка адреса сервера", "Ошибка отпраквки почты", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
     }
 }

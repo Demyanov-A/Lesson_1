@@ -7,11 +7,34 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Send" HorizontalAlignment="Center" Margin="0,303,0,0" VerticalAlignment="Top" Height="42" Width="104" Click="SendButton_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="44,116,0,0" Text="Login" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="172"/>
-        <TextBlock HorizontalAlignment="Left" Margin="546,116,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="202"/>
-        <TextBox x:Name="Login" HorizontalAlignment="Left" Margin="44,180,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="35"/>
-        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="538,182,0,0" VerticalAlignment="Top" Width="218" Height="32"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="401*"/>
+            <ColumnDefinition Width="246*"/>
+            <ColumnDefinition Width="153*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Send" HorizontalAlignment="Left" Margin="348,0,0,85" Width="104" Click="SendButton_Click" Height="42" VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,0,185,290" Text="Login" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="24" Width="172"/>
+        <TextBlock HorizontalAlignment="Left" Margin="145,0,0,290" Text="Password" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="24" Width="202" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Login" HorizontalAlignment="Right" Margin="0,0,211,215" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="146" Height="35" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="155.243"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="137,182,0,0" VerticalAlignment="Top" Width="218" Height="32" Grid.Column="1" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+            <PasswordBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-164.384"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </PasswordBox.RenderTransform>
+        </PasswordBox>
 
     </Grid>
 </Window>

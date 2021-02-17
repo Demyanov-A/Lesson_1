@@ -17,13 +17,13 @@ namespace TestConsole
             message.Subject = "Заголовок";
             message.Body = "Text";
 
-            var client = new SmtpClient("smtp.yandex.ru",465);
+            var client = new SmtpClient("smtp.yandex.ru",25);
             client.EnableSsl = true;
 
             client.Credentials = new NetworkCredential
             {
-                UserName = "a.demyanof",
-                Password = "Qwerty0808"
+                UserName = "UserName",
+                Password = "Password"
             };
 
             client.Send(message);
