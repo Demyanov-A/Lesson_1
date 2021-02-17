@@ -38,7 +38,7 @@ namespace TestWPF
             message.Subject = "Заголовок";
             message.Body = "Text";
 
-            var client = new SmtpClient("smtp.yandex.ru", 465);
+            var client = new SmtpClient("smtp.yandex.ru", 25);
             client.EnableSsl = true;
             
             client.Credentials = new NetworkCredential
