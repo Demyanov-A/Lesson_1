@@ -20,28 +20,32 @@ namespace TestWPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WPFMailSender : Window
     {
-        public MainWindow()
+        public WPFMailSender()
         {
             InitializeComponent();
         }
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
-            var from = new MailAddress("a.demyanof@yandex.ru", "Андрей");
+            var message = DataSourceClass.message;
 
-            var to = new MailAddress("a.demyanofff@gmail.com", "Андрей");
+            //message.Subject = DataSourceClass.subject;
 
-            var message = new MailMessage(from, to);
+            message.Subject = MessageSubject.Text;
 
-            message.Subject = "Заголовок";
-            message.Body = "Text";
+            //message.Body = DataSourceClass.body;
 
-            var client = new SmtpClient("smtp.yandex.ru", 25);
+            message.Body = MessageBody.Text;
+
+            var client = DataSourceClass.client;
+
             client.EnableSsl = true;
-            
-            client.Credentials = new NetworkCredential
+
+            var EmailSender = new EmailSendServiceClass();
+
+            var Credentials = new NetworkCredential
             {
                 UserName = Login.Text,
                 SecurePassword = Password.SecurePassword
@@ -50,7 +54,8 @@ namespace TestWPF
 
             try
             {
-                client.Send(message);
+                //client.Send(message);
+                EmailSender.SendMail(message, client, Credentials);
                 MessageBox.Show("Почта успешно отправлена", "Отправка почты", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (SmtpException)
