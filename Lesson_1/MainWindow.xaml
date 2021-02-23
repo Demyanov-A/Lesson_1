@@ -68,7 +68,74 @@
                     </GroupBox>
                 </DockPanel>
             </TabItem>
-            <TabItem Header="Планировщик"></TabItem>
+            <TabItem Header="Планировщик">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" MinWidth="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Grid.Column="0" Header="Управление">
+                        <StackPanel>
+                            <TextBlock Text="Дата" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                            <Calendar></Calendar>
+                            <TextBlock Text="Время" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                            <TextBox Margin="10,0"/>
+                            <StackPanel Margin="5,7">
+                                <StackPanel.Resources>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Margin" Value="0,3"/>
+                                        <Setter Property="Background" Value="White"/>
+                                    </Style>
+                                </StackPanel.Resources>
+                                <Button Content="Запланировать"/>
+                                <Button Content="Отправить"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Grid.Column="1" Header="Задание">
+                        <ListBox>
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                            <ListBoxItem>
+                                <GroupBox>
+                                    <GroupBox.Header>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Задание от 16.02.2021" VerticalAlignment="Center"></TextBlock>
+                                            <Button Content="X" Margin="5,0,0,0" Background="Transparent" BorderThickness="0" Foreground="Red" FontWeight="Bold"></Button>
+                                        </StackPanel>
+                                    </GroupBox.Header>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition/>                                            
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Отправитель:"/>
+                                        <TextBlock Grid.Column="1" Grid.Row="0" Text="Иванов И.И."/>
+                                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Получатели:"/>
+                                        <ItemsControl Grid.Column="1" Grid.Row="1">
+                                            <TextBlock Text="Иванов"/>
+                                            <TextBlock Text="Петров"/>
+                                            <TextBlock Text="Сидоров"/>
+                                        </ItemsControl>
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Письмо"/>
+                                        <TextBlock Grid.Row="2" Grid.Column="1" Text="Текст письма"/>
+                                    </Grid>
+                                </GroupBox>
+                            </ListBoxItem>
+                        </ListBox>
+                    </GroupBox>
+                    <GridSplitter Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="3" Background="Transparent"></GridSplitter>
+                </Grid>
+            </TabItem>
             <TabItem Header="Письма"></TabItem>
             <TabItem Header="Статистика"></TabItem>
         </TabControl>
