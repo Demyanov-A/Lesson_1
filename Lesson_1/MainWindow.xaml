@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.com/icons/"
         xmlns:local="clr-namespace:Lesson_1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -33,9 +34,12 @@
                                 <ComboBoxItem>smtp.mail.ru:465</ComboBoxItem>
                                 <ComboBoxItem>smtp.gmail.com:465</ComboBoxItem>
                             </ComboBox>
-                            <Button>Добавить</Button>
-                            <Button>Редактировать</Button>
-                            <Button>Убавить</Button>                            
+                            <Button Margin="1,0,0,0" ToolTip="Добавить" fa:Awesome.Content="Solid_Plus">
+                            </Button>
+                            <Button ToolTip="Редактировать" fa:Awesome.Content="Solid_Edit">                                
+                            </Button>
+                            <Button ToolTip="Убавить" fa:Awesome.Content="Solid_Minus">
+                            </Button>
                         </ToolBar>
                         <ToolBar Header="Отправители" Band="1" BandIndex="0">
                             <ComboBox MinWidth="120" MaxWidth="200" SelectedIndex="0">
@@ -43,18 +47,25 @@
                                 <ComboBoxItem>petrov@mail.ru</ComboBoxItem>
                                 <ComboBoxItem>sidorov@gmail.com</ComboBoxItem>
                             </ComboBox>
-                            <Button>Добавить</Button>
-                            <Button>Редактировать</Button>
-                            <Button>Убавить</Button>
+                            <Button ToolTip="Добавить" fa:Awesome.Content="Solid_Plus">
+                            </Button>
+                            <Button ToolTip="Редактировать" fa:Awesome.Content="Solid_Edit">
+                            </Button>
+                            <Button ToolTip="Убавить" fa:Awesome.Content="Solid_Minus">                            
+                            </Button>
                         </ToolBar>
                         <ToolBar>
                             <TextBlock Text="Перейти в планировщик" VerticalAlignment="Center"/>
-                            <Button>(Перейти)</Button>
+                            <Button ToolTip="Перейти" fa:Awesome.Content="Solid_Clock">
+                            </Button>
                         </ToolBar>
                         <ToolBar Band="1" Header="Получатели">
-                            <Button Content="Создать"/>
-                            <Button Content="Редактировать"/>
-                            <Button Content="Удалить"/>
+                            <Button ToolTip="Добавить" fa:Awesome.Content="Solid_Plus">
+                            </Button>
+                            <Button ToolTip="Редактировать" fa:Awesome.Content="Solid_Edit">
+                            </Button>
+                            <Button ToolTip="Убавить" fa:Awesome.Content="Solid_Minus">
+                            </Button>
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Header="Список получателей" Margin="3">
@@ -71,10 +82,11 @@
             <TabItem Header="Планировщик">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" MinWidth="200"/>
+                        <ColumnDefinition Width="14.308"/>
+                        <ColumnDefinition Width="185.692"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <GroupBox Grid.Column="0" Header="Управление">
+                    <GroupBox Grid.Column="0" Header="Управление" Grid.ColumnSpan="2">
                         <StackPanel>
                             <TextBlock Text="Дата" HorizontalAlignment="Center" Margin="0,5,0,0"/>
                             <Calendar></Calendar>
@@ -92,7 +104,7 @@
                             </StackPanel>
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Grid.Column="1" Header="Задание">
+                    <GroupBox Grid.Column="2" Header="Задание">
                         <ListBox>
                             <ListBox.ItemContainerStyle>
                                 <Style TargetType="ListBoxItem">
@@ -110,7 +122,7 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition/>                                            
+                                            <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
@@ -133,12 +145,12 @@
                             </ListBoxItem>
                         </ListBox>
                     </GroupBox>
-                    <GridSplitter Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="3" Background="Transparent"></GridSplitter>
+                    <GridSplitter Grid.Column="1" HorizontalAlignment="Left" Width="3" Background="Transparent" Margin="183,0,0,0"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Письма"></TabItem>
             <TabItem Header="Статистика"></TabItem>
         </TabControl>
     </DockPanel>
-    
+
 </Window>
