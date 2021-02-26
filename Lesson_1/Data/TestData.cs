@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MailSender.lib.Service;
 using Lesson_1.Models;
 
 namespace Lesson_1.Data
@@ -15,7 +16,7 @@ namespace Lesson_1.Data
                Name = $"Сервер-{i}",
                Adress = $"smtp.server{i}.com",
                Login = $"Login-{i}",
-               Password = $"Password-{i}",
+               Password = TextEncoder.Encode($"Password-{i}",7),
                UseSSL = i % 2 == 0,
            })
            .ToList();
