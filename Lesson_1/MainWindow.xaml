@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.com/icons/"
+        xmlns:wpft="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Lesson_1"
         xmlns:data ="clr-namespace:Lesson_1.Data" 
         xmlns:models="clr-namespace:Lesson_1.Models"
@@ -98,7 +99,7 @@
                             <TextBlock Text="Дата" HorizontalAlignment="Center" Margin="0,5,0,0"/>
                             <Calendar></Calendar>
                             <TextBlock Text="Время" HorizontalAlignment="Center" Margin="0,5,0,0"/>
-                            <TextBox Margin="10,0"/>
+                            <wpft:TimePicker Margin="10,0"/>
                             <StackPanel Margin="5,7">
                                 <StackPanel.Resources>
                                     <Style TargetType="Button">
