@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Lesson_1.Controls.ItemsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:l="clr-namespace:Lesson_1.Controls"  
+             xmlns:local="clr-namespace:Lesson_1"
+             xmlns:data ="clr-namespace:Lesson_1.Data" 
+             xmlns:models="clr-namespace:Lesson_1.Models"
+             xmlns:fa="http://schemas.fontawesome.com/icons/"
+             Height="27" Width="400">
+    <DockPanel>
+    <ToolBar Header="Отправители" Band="1" BandIndex="0">
+        <ComboBox MinWidth="120" MaxWidth="200" SelectedIndex="0" ItemsSource="{x:Static data:TestData.Senders}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate DataType="models:Sender">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text=":"/>
+                        <TextBlock Text="{Binding Adress}" Margin="3,0,0,0" Opacity="0.6" FontSize="8"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button ToolTip="Добавить" fa:Awesome.Content="Solid_Plus">
+        </Button>
+        <Button ToolTip="Редактировать" fa:Awesome.Content="Solid_Edit">
+        </Button>
+        <Button ToolTip="Убавить" fa:Awesome.Content="Solid_Minus">
+        </Button>
+     </ToolBar>
+    </DockPanel>
+</UserControl>

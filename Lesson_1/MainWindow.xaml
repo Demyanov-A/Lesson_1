@@ -8,6 +8,7 @@
         xmlns:local="clr-namespace:Lesson_1"
         xmlns:data ="clr-namespace:Lesson_1.Data" 
         xmlns:models="clr-namespace:Lesson_1.Models"
+        xmlns:cmp="clr-namespace:Lesson_1.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
@@ -62,6 +63,7 @@
                             <Button ToolTip="Убавить" fa:Awesome.Content="Solid_Minus">                            
                             </Button>
                         </ToolBar>
+                        <cmp:
                         <ToolBar>
                             <TextBlock Text="Перейти в планировщик" VerticalAlignment="Center"/>
                             <Button ToolTip="Перейти" fa:Awesome.Content="Solid_Clock">
