@@ -62,20 +62,19 @@
                             </Button>
                             <Button ToolTip="Убавить" fa:Awesome.Content="Solid_Minus">                            
                             </Button>
-                        </ToolBar>
-                        <cmp:
-                        <ToolBar>
+                        </ToolBar>                        
+                        <ToolBar>                            
                             <TextBlock Text="Перейти в планировщик" VerticalAlignment="Center"/>
                             <Button ToolTip="Перейти" fa:Awesome.Content="Solid_Clock">
                             </Button>
                         </ToolBar>
                         <ToolBar Band="1" Header="Получатели">
-                            <Button ToolTip="Добавить" fa:Awesome.Content="Solid_Plus">
-                            </Button>
-                            <Button ToolTip="Редактировать" fa:Awesome.Content="Solid_Edit">
-                            </Button>
-                            <Button ToolTip="Убавить" fa:Awesome.Content="Solid_Minus">
-                            </Button>
+                            <Button ToolTip="Добавить" fa:Awesome.Content="Solid_Plus"/>
+                            <Button ToolTip="Редактировать" fa:Awesome.Content="Solid_Edit"/>
+                            <Button ToolTip="Убавить" fa:Awesome.Content="Solid_Minus"/>
+                        </ToolBar>
+                        <ToolBar Band="2">
+                            <cmp:ItemsControl/>
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Header="Список получателей" Margin="3">

@@ -15,14 +15,9 @@ using System.Windows.Shapes;
 
 namespace Lesson_1.Controls
 {
-    /// <summary>
-    /// Логика взаимодействия для ItemsControl.xaml
-    /// </summary>
     public partial class ItemsControl : UserControl
     {
-        public ItemsControl()
-        {
-            InitializeComponent();
-        }
+        public string Title { get; set; }
+        public ItemsControl() => InitializeComponent();
     }
 }
