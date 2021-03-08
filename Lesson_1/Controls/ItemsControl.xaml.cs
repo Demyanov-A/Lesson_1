@@ -15,14 +15,20 @@ using System.Windows.Shapes;
 
 namespace Lesson_1.Controls
 {
-    public partial class ItemsControl : UserControl
+    public partial class ItemsControl
     {
         public static readonly DependencyProperty TitleProperty =
             DependencyProperty.Register(
                 nameof(Title),
                 typeof(string),
                 typeof(ItemsControl),
-                new PropertyMetadata(default(string)));
+                new PropertyMetadata(default(string), OnTitleChanged));
+
+        private static void OnTitleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            
+        }
+
         public string Title { get => (string)GetValue(TitleProperty); set => SetValue(TitleProperty, value); }
         public ItemsControl() => InitializeComponent();
     }

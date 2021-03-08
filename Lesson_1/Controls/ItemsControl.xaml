@@ -6,11 +6,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:data="clr-namespace:Lesson_1.Data"
              xmlns:models="clr-namespace:Lesson_1.Models"
+             xmlns:l="clr-namespace:Lesson_1.Controls"
              mc:Ignorable="d"
-             Height="27" Width="400"
-             DataContext="{Binding RelativeSource={RelativeSource Self}}">
+             Height="27" Width="400">
     <DockPanel>
-        <TextBlock Text="{Binding Title}" 
+        <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=l:ItemsControl}}" 
                    VerticalAlignment="Center" 
                    HorizontalAlignment="Center" 
                    Margin="5,0,0,0"/>
