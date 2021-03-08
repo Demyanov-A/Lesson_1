@@ -74,7 +74,7 @@
                             <Button ToolTip="Убавить" fa:Awesome.Content="Solid_Minus"/>
                         </ToolBar>
                         <ToolBar Band="2">
-                            <cmp:ItemsControl/>
+                            <cmp:ItemsControl Title="123"/>
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Header="Список получателей" Margin="3">

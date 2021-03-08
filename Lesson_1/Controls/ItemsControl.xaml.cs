@@ -17,7 +17,13 @@ namespace Lesson_1.Controls
 {
     public partial class ItemsControl : UserControl
     {
-        public string Title { get; set; }
+        public static readonly DependencyProperty TitleProperty =
+            DependencyProperty.Register(
+                nameof(Title),
+                typeof(string),
+                typeof(ItemsControl),
+                new PropertyMetadata(default(string)));
+        public string Title { get => (string)GetValue(TitleProperty); set => SetValue(TitleProperty, value); }
         public ItemsControl() => InitializeComponent();
     }
 }
