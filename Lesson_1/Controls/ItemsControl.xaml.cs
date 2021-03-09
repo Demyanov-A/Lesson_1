@@ -22,7 +22,7 @@ namespace Lesson_1.Controls
                 nameof(Title),
                 typeof(string),
                 typeof(ItemsControl),
-                new PropertyMetadata(default(string), OnTitleChanged));
+                new PropertyMetadata(defaultValue:"(Название)", OnTitleChanged));
 
         private static void OnTitleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
