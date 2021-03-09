@@ -7,15 +7,18 @@ namespace TestWPF.ViewModels
 {
     class MainWindowViewModel : ViewModel
     {
-        private string _Title = "Test1111";
+        private string _Title = "Test";
         public string Title 
         { 
             get => _Title;
-            set
-            {
-                _Title = value;
-                OnPropertyChanged(nameof(Title));
-            }
+            //set
+            //{
+            //    //if (_Title == value) return;
+            //    if (Equals(_Title, value)) return;
+            //    _Title = value;
+            //    OnPropertyChanged();                
+            //}
+            set => Set(ref _Title, value);
         }
 
     }
