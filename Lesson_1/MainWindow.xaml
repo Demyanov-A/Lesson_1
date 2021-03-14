@@ -12,14 +12,12 @@
         xmlns:viewModels="clr-namespace:Lesson_1.ViewModels"
         mc:Ignorable="d"
         Title="{Binding Title}" 
+        DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
         Height="450" Width="800">
-    <Window.DataContext>
-        <viewModels:MainWindowViewModel/>
-    </Window.DataContext>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
-                <MenuItem Header="Выход" Click="Exit_Click"/>
+                <MenuItem Header="Выход" Command="{StaticResource CloseAppCommand}"/>
             </MenuItem>
             <MenuItem Header="Справка">
                 <MenuItem Header="Помощь"/>
@@ -38,10 +36,14 @@
                 <DockPanel>
                     <ToolBarTray DockPanel.Dock="Top">
                         <ToolBar Header="Сервера">
-                            <ComboBox ItemsSource="{x:Static data:TestData.Servers}" DisplayMemberPath="Adress" Margin="26,0,0,0" MinWidth="120" MaxWidth="200" SelectedIndex="0">
-                                
+                            <ComboBox ItemsSource="{Binding Servers}" 
+                                      DisplayMemberPath="Adress" 
+                                      Margin="26,0,0,0" 
+                                      MinWidth="120" 
+                                      MaxWidth="200" 
+                                      SelectedIndex="0">                                
                             </ComboBox>
-                            <Button Margin="1,0,0,0" ToolTip="Добавить" fa:Awesome.Content="Solid_Plus">
+                            <Button Command="" Margin="1,0,0,0" ToolTip="Добавить" fa:Awesome.Content="Solid_Plus">
                             </Button>
                             <Button ToolTip="Редактировать" fa:Awesome.Content="Solid_Edit">                                
                             </Button>
